@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
+
 {% block content %}
-    <h1>Вход</h1>
-    <form method="post" action="{{ url for('login')}}">
+    <h1 class="my-4">Вход</h1>
+    <form method="post" action="{{ url_for('login') }}">
         {{ form.hidden_tag() }}
-        <div>
-            {{ form.username.label }}
-            {{ form.username }}
+        <div class="form-group">
+            {{ form.username.label(class="form-label") }}
+            {{ form.username(class="form-control") }}
         </div>
-        <div>
-            {{ form.password.label }}
-            {{ form.password }}
+        <div class="form-group">
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
         </div>
-        <div>
-            {{ form.submit }}
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
         </div>
     </form>
 {% endblock %}
